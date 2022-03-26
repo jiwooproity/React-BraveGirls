@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Wallpaper from "../../items/Wallpaper";
+import About from "./about/About";
+import Section from "./section/Section";
+import Wallpaper from "./wallpaper/Wallpaper";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -15,6 +17,8 @@ const MainStyle = () => {
     <MainContainer>
       <MainWrapper>
         <Wallpaper />
+        <About />
+        <Section />
       </MainWrapper>
     </MainContainer>
   );

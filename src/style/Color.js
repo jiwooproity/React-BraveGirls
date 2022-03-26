@@ -7,6 +7,10 @@ const Color = {
   TextColor: {
     White: "#ffffff",
   },
+
+  borderColor: {
+    White: "#ffffff",
+  },
 };
 
 export default Color;
