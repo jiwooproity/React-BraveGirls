@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MainWallpaper from "../../../../image/bravegirls_wallpaper.png";
 import Color from "../../../../style/Color";
 
 const WallpaperWrapper = styled.div`
@@ -14,14 +15,9 @@ const WallpaperImage = styled.img`
   height: 100%;
 
   object-fit: cover;
-  object-position: 0px 0px;
 
   position: absolute;
   top: 0;
-
-  @media screen and (max-width: 1230px) {
-    object-position: center;
-  }
 `;
 
 const WallpaperTitleContainer = styled.div`
@@ -36,6 +32,8 @@ const WallpaperTitleContainer = styled.div`
 
   position: absolute;
   top: 0;
+
+  background-color: rgba(0, 0, 0, 0.1);
 `;
 
 const WallpaperTextArea = styled.div``;
@@ -47,6 +45,11 @@ const WallpaperTitle = styled.h1`
   line-height: 40px;
 
   color: ${Color.TextColor.White};
+
+  &:first-child {
+    font-size: 25px;
+    line-height: 32px;
+  }
 `;
 
 const WallpaeprDes = styled.p`
@@ -83,15 +86,15 @@ const WallpaperButtonAnchor = styled.a`
 `;
 
 const WallpaperUrl = {
-  wallpaper: "https://pbs.twimg.com/media/FNQAgP1aQA47FUN?format=jpg&name=4096x4096",
+  wallpaper: MainWallpaper,
 };
 
 const Wallpaper = () => {
   return (
     <WallpaperWrapper>
-      <WallpaperImage src={WallpaperUrl.wallpaper} />
+      <WallpaperImage data-aos="fade-up" data-aos-duration="500" src={WallpaperUrl.wallpaper} />
       <WallpaperTitleContainer>
-        <WallpaperTextArea>
+        <WallpaperTextArea data-aos="fade-right" data-aos-duration="1000">
           <WallpaperTitle>B-GIRLS ARE BACK!</WallpaperTitle>
           <WallpaperTitle>안녕하세요, 브레이브걸스입니다!</WallpaperTitle>
           <WallpaeprDes>SINCE - 2016</WallpaeprDes>

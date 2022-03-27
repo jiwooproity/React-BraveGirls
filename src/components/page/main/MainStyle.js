@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import About from "./about/About";
-import Section from "./section/Section";
+import Footer from "./footer/Footer";
+import Member from "./member/Member";
+import Movie from "./movie/Movie";
 import Wallpaper from "./wallpaper/Wallpaper";
 
 const MainContainer = styled.div`
@@ -18,7 +20,9 @@ const MainStyle = () => {
       <MainWrapper>
         <Wallpaper />
         <About />
-        <Section />
+        <Movie />
+        <Member />
+        <Footer />
       </MainWrapper>
     </MainContainer>
   );

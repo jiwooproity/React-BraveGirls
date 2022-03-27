@@ -1,4 +1,6 @@
-import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const AboutContainer = styled.div`
@@ -43,9 +45,13 @@ const AboutDescriptionAnchor = styled.a`
 `;
 
 const About = () => {
+  useEffect(() => {
+    AOS.init();
+  });
+
   return (
     <AboutContainer>
-      <AboutWrapper>
+      <AboutWrapper data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <AboutTitle>ABOUT BRAVEGIRLS</AboutTitle>
         <AboutDescription>
           브레이브걸스는 브레이브엔터테인먼트 소속으로 2016년 데뷔한 2기 멤버 민영, 유정, 은지, 유나로 구성된 4인조 걸그룹이다.

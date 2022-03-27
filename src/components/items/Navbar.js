@@ -23,6 +23,8 @@ const NavbarTop = styled.div`
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
+  background-color: black;
+
   z-index: 1;
 `;
 
@@ -37,7 +39,7 @@ const NavbarBottom = styled.div`
 
   position: ${({ fixed }) => (fixed ? "fixed" : "none")};
 
-  background-color: ${({ fixed }) => (fixed ? "rgba(0, 0, 0, 0.5)" : "none")};
+  background-color: ${({ fixed }) => (fixed ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.2)")};
 
   backdrop-filter: ${({ fixed }) => (fixed ? "blur(15px)" : "blur(0)")};
 
