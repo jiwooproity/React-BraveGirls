@@ -47,8 +47,6 @@ const MemberProfileWrapper = styled.div`
 `;
 
 const MemberProfileCard = styled.div`
-  position: relative;
-
   margin: 0px 10px;
 
   @media screen and (max-width: 768px) {
@@ -56,12 +54,18 @@ const MemberProfileCard = styled.div`
   }
 `;
 
+const MemberProfileImageWrap = styled.div`
+  position: relative;
+`;
+
 const MemeberProfile = styled.img`
   width: 250px;
+  height: 250px;
 
   display: block;
 
   object-fit: cover;
+  object-position: 0px 0px;
 
   border-radius: 5px;
 
@@ -101,27 +105,62 @@ const MemberProfileName = styled.span`
   color: ${Color.TextColor.White};
 `;
 
+const MemberProfileTagName = styled.span`
+  font-size: 15px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+
+  color: ${Color.TextColor.White};
+`;
+
+const MemeberAboutWrap = styled.div`
+  width: 100%;
+
+  padding: 5px 0px;
+
+  display: block;
+
+  text-align: left;
+`;
+
+const MemberAboutText = styled.span`
+  font-size: 15px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+`;
+
 const MemberProfileUrl = [
   {
     id: 1,
     title: "김민영",
-    born: "1990년 9월 12일",
+    born: "1990년 09월 12일",
     image: minyoung,
+    tag: "메보좌",
   },
   {
     id: 2,
     title: "남유정",
+    born: "1991년 05월 02일",
     image: yujeong,
+    tag: "꼬북좌",
   },
   {
     id: 3,
     title: "홍은지",
+    born: "1992년 07월 19일",
     image: eunji,
+    tag: "왕눈좌",
   },
   {
     id: 4,
     title: "이유나",
+    born: "1993년 04월 16일",
     image: yuna,
+    tag: "단발좌",
   },
 ];
 
@@ -133,16 +172,22 @@ const Member = () => {
   return (
     <MemberContainer>
       <MemberWrapper>
-        <MemberTitle data-aos="fade-up" data-aos-duration="1000">
-          MEMBER
-        </MemberTitle>
-        <MemberProfileWrapper data-aos="fade-up" data-aos-duration="1000">
+        {/* <MemberTitle data-aos="fade-up" data-aos-duration="1000"> */}
+        <MemberTitle>MEMBER PROFILE</MemberTitle>
+        {/* <MemberProfileWrapper data-aos="fade-up" data-aos-duration="1000"> */}
+        <MemberProfileWrapper>
           {MemberProfileUrl?.map((profile, index) => (
             <MemberProfileCard key={index}>
-              <MemeberProfile src={profile.image} />
-              <MemberProfileNameWrap>
-                <MemberProfileName>{profile.title}</MemberProfileName>
-              </MemberProfileNameWrap>
+              <MemberProfileImageWrap>
+                <MemeberProfile src={profile.image} />
+                <MemberProfileTagName># {profile.tag}</MemberProfileTagName>
+                <MemberProfileNameWrap>
+                  <MemberProfileName>{profile.title}</MemberProfileName>
+                </MemberProfileNameWrap>
+              </MemberProfileImageWrap>
+              <MemeberAboutWrap>
+                <MemberAboutText>{profile.born}</MemberAboutText>
+              </MemeberAboutWrap>
             </MemberProfileCard>
           ))}
         </MemberProfileWrapper>

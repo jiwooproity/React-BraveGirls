@@ -8,6 +8,8 @@ const WallpaperWrapper = styled.div`
   height: 100vh;
 
   position: relative;
+
+  background-color: black;
 `;
 
 const WallpaperImage = styled.img`
@@ -36,7 +38,12 @@ const WallpaperTitleContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
 `;
 
-const WallpaperTextArea = styled.div``;
+const WallpaperTextArea = styled.div`
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+
+  border-radius: 5px;
+`;
 
 const WallpaperTitle = styled.h1`
   font-size: 32px;
@@ -92,7 +99,8 @@ const WallpaperUrl = {
 const Wallpaper = () => {
   return (
     <WallpaperWrapper>
-      <WallpaperImage data-aos="fade-up" data-aos-duration="500" src={WallpaperUrl.wallpaper} />
+      {/* <WallpaperImage data-aos="fade-up" data-aos-duration="500" src={WallpaperUrl.wallpaper} /> */}
+      <WallpaperImage src={WallpaperUrl.wallpaper} />
       <WallpaperTitleContainer>
         <WallpaperTextArea data-aos="fade-right" data-aos-duration="1000">
           <WallpaperTitle>B-GIRLS ARE BACK!</WallpaperTitle>

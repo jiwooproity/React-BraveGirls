@@ -1,3 +1,5 @@
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Color from "../../style/Color";
@@ -21,7 +23,7 @@ const NavbarTop = styled.div`
 
   position: ${({ fixed }) => (fixed ? "absolute" : "none")};
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
   background-color: black;
 
@@ -45,7 +47,7 @@ const NavbarBottom = styled.div`
 
   transition: background-color 0.5s ease;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
   z-index: 1;
 `;
@@ -76,6 +78,26 @@ const NavbarMenu = styled.ul`
   align-items: center;
 
   list-style: none;
+`;
+
+const NavbarMenuBottom = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  list-style: none;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const NavbarMenuHanburger = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const NavbarTopItem = styled.li`
@@ -114,6 +136,10 @@ const NavbarBottomSearch = styled.input`
 
   &::placeholder {
     color: ${Color.TextColor.White};
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -154,6 +180,7 @@ const BottomMenu = [
 const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
   const [fixed, setFixed] = useState(false);
+  const [subMenu, setSubMenu] = useState(false);
 
   window.addEventListener("scroll", () => {
     let scrollData = window.scrollY;
@@ -164,6 +191,10 @@ const Navbar = () => {
   useEffect(() => {
     setFixed(scrollY > 28);
   }, [scrollY, setScrollY]);
+
+  const openSubMenu = () => {
+    setSubMenu(!subMenu);
+  };
 
   return (
     <NavbarContainer fixed={fixed}>
@@ -176,11 +207,21 @@ const Navbar = () => {
       </NavbarTop>
       <NavbarBottom fixed={fixed}>
         <NavbarBottomArea>
-          <NavbarMenu>
+          <NavbarMenuBottom>
             {BottomMenu?.map((list, index) => (
               <NavbarBottomItem key={index}>{list?.title}</NavbarBottomItem>
             ))}
-          </NavbarMenu>
+          </NavbarMenuBottom>
+          <NavbarMenuHanburger>
+            <FontAwesomeIcon
+              onClick={openSubMenu}
+              style={{
+                color: "white",
+                fontSize: "21",
+              }}
+              icon={faBars}
+            />
+          </NavbarMenuHanburger>
         </NavbarBottomArea>
         <NavbarLogo>BRAVEGIRLS</NavbarLogo>
         <NavbarBottomArea>
