@@ -5,7 +5,7 @@ import Main from "./components/page/main";
 
 const Url = {
   public: "/",
-  main: "/bravegirls",
+  main: "/",
 };
 
 const JSX = {

@@ -51,8 +51,8 @@ const About = () => {
 
   return (
     <AboutContainer>
-      {/* <AboutWrapper data-aos="fade-up" data-aos-anchor-placement="top-bottom"> */}
-      <AboutWrapper>
+      <AboutWrapper data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        {/* <AboutWrapper> */}
         <AboutTitle>ABOUT BRAVEGIRLS</AboutTitle>
         <AboutDescription>
           브레이브걸스는 브레이브엔터테인먼트 소속으로 2016년 데뷔한 2기 멤버 민영, 유정, 은지, 유나로 구성된 4인조 걸그룹이다.
@@ -60,7 +60,7 @@ const About = () => {
           <AboutDescriptionAnchor href="https://www.youtube.com/watch?v=cfHWIqJkEf4" target={"_blank"}>
             #유튜브
           </AboutDescriptionAnchor>
-          에서 시작된 롤린의 역주행으로 많은 주목을 받으면서 발송 출연 빈도가 크게 늘어나는 등 대세 걸그룹으로 발돋움했다.
+          에서 시작된 롤린의 역주행으로 많은 주목을 받으면서 방송 출연 빈도가 크게 늘어나는 등 대세 걸그룹으로 발돋움했다.
         </AboutDescription>
       </AboutWrapper>
     </AboutContainer>

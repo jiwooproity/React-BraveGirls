@@ -5,7 +5,10 @@ import minyoung from "../../../../image/member/minyoung.jpg";
 import eunji from "../../../../image/member/eunji.jpg";
 import yujeong from "../../../../image/member/yujeong.jpg";
 import yuna from "../../../../image/member/yuna.jpg";
+import instagramIcon from "../../../../image/sns/instagram.png";
 import Color from "../../../../style/Color";
+import moment from "moment";
+import "moment/locale/ko";
 
 const MemberContainer = styled.div`
   width: 100%;
@@ -15,10 +18,12 @@ const MemberContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding: 30px;
+  padding: 0px 30px;
 
   @media screen and (max-width: 768px) {
     height: auto;
+
+    padding: 60px 30px 30px 30px;
   }
 `;
 
@@ -133,34 +138,59 @@ const MemberAboutText = styled.span`
   font-weight: 400;
 `;
 
+const InstagramAnchor = styled.a`
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+
+  background-color: white;
+
+  opacity: 0.9;
+`;
+
+const InstagramImage = styled.img`
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+`;
+
 const MemberProfileUrl = [
   {
     id: 1,
     title: "김민영",
-    born: "1990년 09월 12일",
+    born: "1990-09-12",
     image: minyoung,
     tag: "메보좌",
+    instagram: "https://www.instagram.com/nyong2ya/",
   },
   {
     id: 2,
     title: "남유정",
-    born: "1991년 05월 02일",
+    born: "1991-05-02",
     image: yujeong,
     tag: "꼬북좌",
+    instagram: "https://www.instagram.com/braveg_yj/",
   },
   {
     id: 3,
     title: "홍은지",
-    born: "1992년 07월 19일",
+    born: "1992-07-19",
     image: eunji,
     tag: "왕눈좌",
+    instagram: "https://www.instagram.com/bg_eunji92/",
   },
   {
     id: 4,
     title: "이유나",
-    born: "1993년 04월 16일",
+    born: "1993-04-06",
     image: yuna,
     tag: "단발좌",
+    instagram: "https://www.instagram.com/u.nalee/",
   },
 ];
 
@@ -172,10 +202,11 @@ const Member = () => {
   return (
     <MemberContainer>
       <MemberWrapper>
-        {/* <MemberTitle data-aos="fade-up" data-aos-duration="1000"> */}
-        <MemberTitle>MEMBER PROFILE</MemberTitle>
-        {/* <MemberProfileWrapper data-aos="fade-up" data-aos-duration="1000"> */}
-        <MemberProfileWrapper>
+        <MemberTitle data-aos="fade-up" data-aos-duration="1000">
+          MEMBER PROFILE
+        </MemberTitle>
+        <MemberProfileWrapper data-aos="fade-up" data-aos-duration="1000">
+          {/* <MemberProfileWrapper> */}
           {MemberProfileUrl?.map((profile, index) => (
             <MemberProfileCard key={index}>
               <MemberProfileImageWrap>
@@ -184,9 +215,12 @@ const Member = () => {
                 <MemberProfileNameWrap>
                   <MemberProfileName>{profile.title}</MemberProfileName>
                 </MemberProfileNameWrap>
+                <InstagramAnchor href={profile.instagram} target={"_blank"}>
+                  <InstagramImage src={instagramIcon} />
+                </InstagramAnchor>
               </MemberProfileImageWrap>
               <MemeberAboutWrap>
-                <MemberAboutText>{profile.born}</MemberAboutText>
+                <MemberAboutText>{moment(profile.born).format("YYYY년 MM월 DD일")}</MemberAboutText>
               </MemeberAboutWrap>
             </MemberProfileCard>
           ))}

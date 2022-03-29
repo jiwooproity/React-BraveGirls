@@ -147,10 +147,16 @@ const TopMenu = [
   {
     id: 1,
     title: "LOGIN /",
+    onClick: () => {
+      alert("아직 이용하실 수 없습니다.");
+    },
   },
   {
     id: 2,
     title: "JOIN",
+    onClick: () => {
+      alert("아직 이용하실 수 없습니다.");
+    },
   },
 ];
 
@@ -158,22 +164,16 @@ const BottomMenu = [
   {
     id: 1,
     title: "HOME",
-    onClick: () => {},
+    onClick: () => {
+      alert("준비 중입니다.");
+    },
   },
   {
     id: 2,
     title: "ABOUT",
-    onClick: () => {},
-  },
-  {
-    id: 3,
-    title: "TEST",
-    onClick: () => {},
-  },
-  {
-    id: 4,
-    title: "TEST",
-    onClick: () => {},
+    onClick: () => {
+      alert("준비 중입니다.");
+    },
   },
 ];
 
@@ -201,7 +201,9 @@ const Navbar = () => {
       <NavbarTop fixed={fixed}>
         <NavbarMenu>
           {TopMenu?.map((item, index) => (
-            <NavbarTopItem key={index}>{item.title}</NavbarTopItem>
+            <NavbarTopItem onClick={item.onClick} key={index}>
+              {item.title}
+            </NavbarTopItem>
           ))}
         </NavbarMenu>
       </NavbarTop>
@@ -209,7 +211,9 @@ const Navbar = () => {
         <NavbarBottomArea>
           <NavbarMenuBottom>
             {BottomMenu?.map((list, index) => (
-              <NavbarBottomItem key={index}>{list?.title}</NavbarBottomItem>
+              <NavbarBottomItem onClick={list.onClick} key={index}>
+                {list?.title}
+              </NavbarBottomItem>
             ))}
           </NavbarMenuBottom>
           <NavbarMenuHanburger>

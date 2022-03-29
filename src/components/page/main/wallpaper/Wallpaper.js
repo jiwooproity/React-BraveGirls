@@ -38,24 +38,19 @@ const WallpaperTitleContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
 `;
 
-const WallpaperTextArea = styled.div`
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 10px;
-
-  border-radius: 5px;
-`;
+const WallpaperTextArea = styled.div``;
 
 const WallpaperTitle = styled.h1`
-  font-size: 32px;
+  font-size: 30px;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
-  line-height: 40px;
+
+  line-height: 35px;
 
   color: ${Color.TextColor.White};
 
   &:first-child {
-    font-size: 25px;
-    line-height: 32px;
+    font-size: 30px;
   }
 `;
 
@@ -99,13 +94,13 @@ const WallpaperUrl = {
 const Wallpaper = () => {
   return (
     <WallpaperWrapper>
-      {/* <WallpaperImage data-aos="fade-up" data-aos-duration="500" src={WallpaperUrl.wallpaper} /> */}
-      <WallpaperImage src={WallpaperUrl.wallpaper} />
+      <WallpaperImage data-aos="fade-up" data-aos-duration="1000" src={WallpaperUrl.wallpaper} />
+      {/* <WallpaperImage src={WallpaperUrl.wallpaper} /> */}
       <WallpaperTitleContainer>
-        <WallpaperTextArea data-aos="fade-right" data-aos-duration="1000">
+        <WallpaperTextArea data-aos="fade-right" data-aos-duration="1500">
           <WallpaperTitle>B-GIRLS ARE BACK!</WallpaperTitle>
           <WallpaperTitle>안녕하세요, 브레이브걸스입니다!</WallpaperTitle>
-          <WallpaeprDes>SINCE - 2016</WallpaeprDes>
+          <WallpaeprDes>SINCE 2016 / 1854일의 기적</WallpaeprDes>
           <WallpaperButton>
             <WallpaperButtonAnchor href={"https://www.youtube.com/watch?v=sdycvSqMhPI"} target={"_blank"}>
               Thank You M/V 듣기

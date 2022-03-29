@@ -1,7 +1,8 @@
 {
   "name": "bravegirls",
   "version": "0.1.0",
-  "homepage": "/bravegirls",
+  "homepage": "/",
+  "proxy": "http://localhost",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -11,6 +12,8 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
+    "axios": "^0.26.1",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-fade-in": "^2.0.1",

@@ -12,6 +12,7 @@ const MainContainer = styled.div`
 
 const MainWrapper = styled.div`
   width: 100%;
+  overflow: hidden;
 `;
 
 const MainStyle = () => {
